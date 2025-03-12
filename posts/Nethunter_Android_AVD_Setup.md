@@ -83,7 +83,7 @@ Congrats your AVD is now rooted!
 
 ## Build x64 Nethunter Chroot
 
-# Flashing the Device
+## Flashing the Device
 
-# Device pass through
+## Device pass through
 You can passthrough a multitude of devices into the AVD, from wifi, to SDR, to bluetooth, to a proxmark3
