@@ -54,4 +54,36 @@ Find your desired api version and run the command it gives you eg.
 | Upside Down Cake (14)   | 34  |
 | Vanilla Ice Cream (15)  | 35  |
 
-After picking your desired API version
+After picking your desired API version and downloading it you will be presented wit a bunch of options like ram, storage etc.
+<br>
+Most of these are personal preference but you want 30-40gb of storage to play around with (installing packages, apps, chroot etc).
+<br>
+<br>
+The next step is to download a nifty tool named RootAVD written by newbit
+You can download it [Here](https://gitlab.com/newbit/rootAVD)
+
+
+## Rooting the AVD
+For the next step: **Make sure the AVD is running**
+<br>
+After running the script it will give you an output like the one below
+<br>
+![RootAVD Output](/images/root-avd-output.png)
+<br>
+You want to select your api version in my case I am developing for android 8 (27) so I will run
+``./rootAVD.sh system-images/android-27/google_apis/x86/ramdisk.img``
+
+This will automatically install magisk, patch the Boot.img, root the device.
+If it turns off the AVD do not be alarmed just restart it and it should boot.
+Go into the magisk app on the AVD and you should see a popup asking you to apply changes and reboot, this is ok, click ok, the avd will turn off (and usually turn back on) but if it doesnt your more than ok to manually start it back up
+<br>
+Congrats your AVD is now rooted!
+
+## Build x64 Nethunter Image
+
+## Build x64 Nethunter Chroot
+
+# Flashing the Device
+
+# Device pass through
+You can passthrough a multitude of devices into the AVD, from wifi, to SDR, to bluetooth, to a proxmark3
