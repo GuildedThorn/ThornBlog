@@ -67,7 +67,7 @@ You can download it [Here](https://gitlab.com/newbit/rootAVD)
 For the next step: **Make sure the AVD is running**
 <br>
 After running the script it will give you an output like the one below
-<br>
+<br>cdc 
 ![RootAVD Output](/images/root-avd-output.png)
 <br>
 You want to select your api version in my case I am developing for android 8 (27) so I will run
@@ -80,7 +80,14 @@ Go into the magisk app on the AVD and you should see a popup asking you to apply
 Congrats your AVD is now rooted!
 
 ## Build x64 Nethunter Image
-
+The next step is to clone the NH Image Builder from [Here](https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-installer)
+1. Cd into the project directory
+2. You need to generate a kernel list by running ``./bootstrap.sh``
+3. You need to generate a image for x64 architecture, I built mine for android 8 but you can change this is you chose a different AVD version ``./build.py -g amd64 --oreo``
+4. Wait until the builder finishes
+5. You can upload the image to the AVD in a variety of ways (sftp, android studio file manager), I spun up a python webserver and downloaded it from chrome in the AVD using ``python -m http.server`` while cded into the image directory into the builder directory, I connected in the AVD using 10.0.2.2:8000
+6. After the image is transfered go the the magisk app -> modules -> install from disk and select the image, when it asks to reboot do so
+Congrats you have flashed the NH image
 ## Build x64 Nethunter Chroot
 
 ## Flashing the Device
